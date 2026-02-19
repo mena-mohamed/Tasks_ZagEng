@@ -1,0 +1,14 @@
+E:\Zag Eng\Scenario\Scenario\bin\Debug\net9.0\Scenario.exe
+E:\Zag Eng\Scenario\Scenario\bin\Debug\net9.0\Scenario.deps.json
+E:\Zag Eng\Scenario\Scenario\bin\Debug\net9.0\Scenario.runtimeconfig.json
+E:\Zag Eng\Scenario\Scenario\bin\Debug\net9.0\Scenario.dll
+E:\Zag Eng\Scenario\Scenario\bin\Debug\net9.0\Scenario.pdb
+E:\Zag Eng\Scenario\Scenario\obj\Debug\net9.0\Scenario.GeneratedMSBuildEditorConfig.editorconfig
+E:\Zag Eng\Scenario\Scenario\obj\Debug\net9.0\Scenario.AssemblyInfoInputs.cache
+E:\Zag Eng\Scenario\Scenario\obj\Debug\net9.0\Scenario.AssemblyInfo.cs
+E:\Zag Eng\Scenario\Scenario\obj\Debug\net9.0\Scenario.csproj.CoreCompileInputs.cache
+E:\Zag Eng\Scenario\Scenario\obj\Debug\net9.0\Scenario.dll
+E:\Zag Eng\Scenario\Scenario\obj\Debug\net9.0\refint\Scenario.dll
+E:\Zag Eng\Scenario\Scenario\obj\Debug\net9.0\Scenario.pdb
+E:\Zag Eng\Scenario\Scenario\obj\Debug\net9.0\Scenario.genruntimeconfig.cache
+E:\Zag Eng\Scenario\Scenario\obj\Debug\net9.0\ref\Scenario.dll
