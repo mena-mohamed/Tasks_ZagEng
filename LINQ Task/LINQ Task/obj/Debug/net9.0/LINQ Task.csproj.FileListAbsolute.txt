@@ -1,0 +1,14 @@
+E:\Zag Eng\LINQ Task\LINQ Task\bin\Debug\net9.0\LINQ Task.exe
+E:\Zag Eng\LINQ Task\LINQ Task\bin\Debug\net9.0\LINQ Task.deps.json
+E:\Zag Eng\LINQ Task\LINQ Task\bin\Debug\net9.0\LINQ Task.runtimeconfig.json
+E:\Zag Eng\LINQ Task\LINQ Task\bin\Debug\net9.0\LINQ Task.dll
+E:\Zag Eng\LINQ Task\LINQ Task\bin\Debug\net9.0\LINQ Task.pdb
+E:\Zag Eng\LINQ Task\LINQ Task\obj\Debug\net9.0\LINQ Task.GeneratedMSBuildEditorConfig.editorconfig
+E:\Zag Eng\LINQ Task\LINQ Task\obj\Debug\net9.0\LINQ Task.AssemblyInfoInputs.cache
+E:\Zag Eng\LINQ Task\LINQ Task\obj\Debug\net9.0\LINQ Task.AssemblyInfo.cs
+E:\Zag Eng\LINQ Task\LINQ Task\obj\Debug\net9.0\LINQ Task.csproj.CoreCompileInputs.cache
+E:\Zag Eng\LINQ Task\LINQ Task\obj\Debug\net9.0\LINQ Task.dll
+E:\Zag Eng\LINQ Task\LINQ Task\obj\Debug\net9.0\refint\LINQ Task.dll
+E:\Zag Eng\LINQ Task\LINQ Task\obj\Debug\net9.0\LINQ Task.pdb
+E:\Zag Eng\LINQ Task\LINQ Task\obj\Debug\net9.0\LINQ Task.genruntimeconfig.cache
+E:\Zag Eng\LINQ Task\LINQ Task\obj\Debug\net9.0\ref\LINQ Task.dll
