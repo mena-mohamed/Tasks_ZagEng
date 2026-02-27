@@ -282,8 +282,130 @@ namespace LINQ_Task
             #endregion
 
 
+             #region Q10
+            //List<string> words = ["apple", "fig", "banana", "kiwi", "grape", "mango", "pear", "plum"];
+
+            //// 1. Filter words longer than 4 characters
+            //var wordLong = words.Where(w => w.Length > 4);
+            //Console.WriteLine("Words longer than 4 chars: " + string.Join(", ", wordLong));
+
+           //// 2. Filter words at even indexes (0, 2, 4, 6...) using (item, index) overload
+           //var evenIndexWord = words.Where ((w, index) => index % 2 == 0);
+           //Console.WriteLine("Words at even indexes: " + string.Join(", ", evenIndexWord));
+
+           //// 3. Filter words that are BOTH longer than 4 chars AND at an even index
+           //var word = words.Where((w, index) => w.Length > 4 && index % 2 == 0);
+           //Console.WriteLine("Words longer than 4 chars AND at even index: " + string.Join(", ", word));
+
+           //// 4. What is the index of "mango" in the filtered result from step 1?
+           //var listLongerThan4 = wordLong.ToList();
+           //int mangoIndex = listLongerThan4.IndexOf("mango");
+           //Console.WriteLine("Index of 'mango' in step 1 result: " + mangoIndex);
+
+           #endregion
+
+
+           #region Q11
+           List<Course> courses = new List<Course>
+           {
+           new("C# Basics", new List<string> { "Ali", "Sara", "Omar" }),
+           new("LINQ Mastery", new List<string> { "Sara", "Mona", "Ali" }),
+           new("ASP.NET Core", new List<string> { "Yara", "Omar", "Karim" }),
+           };
+
+           //// 1. Flatten to a single list of ALL student names (with duplicates)
+           //var allStudents = courses.SelectMany(c => c.Students);
+           //Console.WriteLine("\nAll student names (with duplicates): " + string.Join(", ", allStudents));
+
+           //// 2. Get a distinct list of all student names
+           //var distinctStudents = allStudents.Distinct();
+           //Console.WriteLine("\nDistinct student names: " + string.Join(", ", distinctStudents));
+
+          //// 3. Find students who appear in MORE THAN ONE course
+          //var duplicates = allStudents.GroupBy(s => s)
+          //                            .Where(g => g.Count() > 1)
+          //                            .Select(g => g.Key);
+          //Console.WriteLine("\nStudents in more than one course: " + string.Join(", ", duplicates));
+
+         //// 4. Use SelectMany with result selector to get (CourseName, StudentName) pairs
+         //var courseStudentPairs = courses.SelectMany(c => c.Students,(course, student) => new 
+         //                       { 
+         //                          CourseName = course.Title, StudentName = student 
+         //                       });
+
+         //Console.WriteLine("\nCourseName - StudentName pairs:");
+         //foreach (var pair in courseStudentPairs)
+        //{
+        //    Console.WriteLine($"{pair.CourseName} - {pair.StudentName}");
+        //} 
+        #endregion
+
+
+#region Q12
+ ////1.From employees: get the TOP 2 highest - paid employees per department.
+ //var top2PerDept = employees.GroupBy(e => e.Department)                                   // Deferred
+ //                           .SelectMany(g => g.OrderByDescending(e => e.Salary).Take(2)); // Deferred until iterated
+
+ //Console.WriteLine("Top 2 highest-paid employees per department:");
+ //foreach (var emp in top2PerDept)
+ //{
+ //    Console.WriteLine($"{emp.Name} ({emp.Department}) - {emp.Salary}");
+ //}
+
+
+ ////2.From courses: build a Dictionary<string, int> of{ CourseName → StudentCount }, but only for courses with > 2 students.
+ //var courseDict = courses.Where(c => c.Students.Count > 2)                      // Deferred
+ //                        .ToDictionary(c => c.Title, c => c.Students.Count);    // Immediate execution
+
+ //Console.WriteLine("\nCourse dictionary (more than 2 students):");
+ //foreach (var kv in courseDict)
+ //{
+ //    Console.WriteLine($"{kv.Key} >> {kv.Value} students");
+ //}
+
+
+ ////3.Check:
+ ////        Does ANY employee in Engineering earn less than 8000 ?
+ //bool anyEngineeringBelow8k = employees.Where(e => e.Department == "Engineering")
+ //                                      .Any(e => e.Salary < 8000);                 // Immediate execution
+
+ ////        Do ALL HR employees earn more than 5500 ?
+ //bool allHREmployeesAbove5_5k = employees.Where(e => e.Department == "HR")
+ //                                        .All(e => e.Salary > 5500);                // Immediate execution
+
+ //Console.WriteLine($"\nAny Engineering employee < 8000? {anyEngineeringBelow8k}");
+ //Console.WriteLine($"All HR employees > 5500? {allHREmployeesAbove5_5k}");
+
+ ////4.Project the top - 2 - per - dept result into:
+ ////  { Rank, Name, Department, Salary, SeniorityLevel }
+ ////  where Rank resets per department(use indexed Select per group).
+ //var top2WithRank = employees.GroupBy(e => e.Department)          //Deferred execution until iterated
+ //                            .SelectMany(g => g
+ //                            .OrderByDescending(e => e.Salary)
+ //                            .Select((emp, index) => new
+ //                            {
+ //                              Rank = index + 1,
+ //                              emp.Name,
+ //                              emp.Department,
+ //                              emp.Salary,
+ //                              SeniorityLevel = emp.Salary >= 9000 ? "Senior" :
+ //                              emp.Salary >= 7000 ? "Mid" : "Junior"
+ //                            }).Take(2));                           // Deferred until iteration
+
+ //Console.WriteLine("\nTop 2 per department with rank and seniority:");
+ //foreach (var emp in top2WithRank)
+ //{
+ //    Console.WriteLine($"{emp.Rank}. {emp.Name} ({emp.Department}) - {emp.Salary} - {emp.SeniorityLevel}");
+ //}
+
+ #endregion
+
+
+
+
 
 
         }
     }
 }
+
