@@ -1,0 +1,153 @@
+Q1. Fundamental differences between ASP.NET and ASP.NET Core
+
+Platform Support
+ASP.NET → Windows only
+ASP.NET Core → Cross-platform (Windows, Linux, macOS)
+
+Performance
+ASP.NET Core is faster and more lightweight
+
+Hosting
+ASP.NET → IIS only
+ASP.NET Core → IIS, Kestrel
+
+Dependency Injection
+ASP.NET → Not built-in
+ASP.NET Core → Built-in DI system
+
+
+Q2. What does it mean for an API to be "Stateless"?
+
+Each request is independent
+The server does not store client session data
+Every request must contain all required information
+
+
+
+Q3. Anatomy of an HTTP Request URL
+
+https://api.example.com:443/products/10?category=books
+
+Protocol(schema) → https
+Host/Domain → api.example.com
+Port → 443
+Path → /products/10
+Query String → ?category=books
+
+Q4. Primary HTTP Methods (Verbs)
+
+GET → Retrieve data
+POST → Create new resource
+PUT → Update entire resource
+DELETE → Remove resource
+
+
+Q5. Role of Program.cs in ASP.NET Core
+Entry point of the application
+Configures:
+Services (DI container)
+Middleware pipeline
+Builds and runs the web app
+
+
+Q6. Why Swagger is enabled only in Development
+Prevents exposing:
+API structure
+Endpoints
+Avoids security risks in production
+Keeps production environment clean and optimized
+
+
+Q7. Core concept of Dependency Injection (DI)
+A design pattern where:
+Dependencies are provided externally
+Instead of creating them inside the class
+
+Benefits:
+Loose coupling
+Easier testing
+Better maintainability
+
+
+Q8. Three Service Lifetimes in ASP.NET Core
+Transient >> New instance every time requested
+
+Scoped >> One instance per HTTP request
+
+Singleton >> One instance for the entire application lifetime
+
+
+Q9. Why use Interface instead of concrete class
+Improves flexibility
+Enables easy swapping of implementations
+Supports unit testing (mocking)
+Reduces tight coupling
+
+
+Q10. Launch Profiles in launchSettings.json
+Define how the app runs locally
+
+Ex:
+IIS Express profile
+Project)Kestrel( profile
+
+
+Q11. How JSON facilitates data exchange in APIs
+Lightweight data format
+Human-readable
+Easily parsed by machines
+Language-independent
+
+Used to send/receive data between:
+Client (frontend)
+Server (API)
+
+=============================================================================================================
+
+Q1.
+Dependency Injection (DI) Dependency Injection is a design pattern in which a class receives its dependencies from external sources rather than creating them itself.
+
+Problems in the code:
+
+Tight coupling between OrderService and dependencies
+Violates Single Responsibility Principle
+Hard-coded dependencies (e.g., connection string)
+Difficult to test (no mocking possible)
+No abstraction (no interfaces used)
+Low flexibility and maintainability
+
+
+
+Q2.What's the difference between A and B? Which one is better?
+Scenario A creates its own dependencies, leading to tight coupling.
+Scenario B uses Dependency Injection and depends on an interface, making it more flexible, testable, and maintainable.
+
+Scenario B is better because it uses Dependency Injection, which makes the code loosely coupled, testable, and more maintainable.
+
+
+
+Q3.What happens when a request is received?
+When a request is received, it passes through the middleware pipeline and is routed to the appropriate controller action.
+ASP.NET Core creates a request scope and uses the Dependency Injection container to resolve dependencies.
+It constructs the object graph by injecting SqlRepository into ProductService, and ProductService into ProductController.
+The action method executes, the business logic runs, and a response is returned.
+Finally, all scoped services are disposed at the end of the request.
+
+
+Q4.What is the output for each registration?
+For Transient, each injection creates a new instance, so the result is false.
+For Scoped, the same instance is used within the same request, so the result is true.
+For Singleton, the same instance is shared across the entire application, so the result is also true.
+
+Q5.Which implementation will Controller A receive?
+      How many services will be injected into Controller B?
+
+Controller A will receive the last registered implementation, which is MailgunEmailService.
+Controller B will receive all registered implementations as a collection, so it will get 3 services.
+
+
+
+
+
+
+
